@@ -1,3 +1,4 @@
+//C++ program to access the elements of an Array using pointers
 #include<iostream>
 using namespace std;
 
