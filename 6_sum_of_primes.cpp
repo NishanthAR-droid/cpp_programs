@@ -5,24 +5,30 @@ int prime(int num);
 
 int main()
 {
-	int num,i;
+	int num,i,flag=0;
 	cout<<"Enter a psitive number\n";
 	cin>>num;
 	for(i=2;i<=num/2;i++)
 	{
-		if(prime(i))
-		{
-			if(prime(num-i))
-			cout<<num<<"="<<i<<"+"<<(num-i)<<endl;
-		}
+	     if(prime(i))
+	     {
+		 if(prime(num-i))
+                 {
+		   cout<<num<<"="<<i<<"+"<<(num-i)<<endl;
+		   flag=1;
+		  }
+	     }
 	}
+	
+	if(!flag)
+	cout<<num<<" cannot be expressed as sum of prime numbers\n";
+	
 	return 0;
 }
 
 int prime(int num)
 {
-	int i;
-	int flag=1;
+	int i,flag=1;
 	for(i=2;i<=num/2;i++)
 	{
 		if(num%i==0)
